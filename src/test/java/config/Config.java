@@ -22,6 +22,7 @@ public class Config {
     public static String getUsername() {
         return System.getProperty(EnvironmentVariables.USERNAME.toString(), USERNAME);
     }
+
     /**
      * @return Password to login.
      */

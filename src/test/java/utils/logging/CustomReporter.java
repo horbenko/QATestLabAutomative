@@ -5,6 +5,8 @@ import org.testng.Reporter;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import static java.lang.String.format;
+import static utils.logging.EventHandler.sb;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -22,21 +24,21 @@ public class CustomReporter {
      * Logs action step that will be highlighted in test execution report.
      */
     public static void logAction(String message) {
-        Reporter.log(format("[%-12s] ACTION: %s", LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME), message));
+        Reporter.log(format("[%-12s] ACTION: %s", LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME), message + "\n"));
     }
 
     /**
      * Logs simple step.
      */
     public static void log(String message) {
-        Reporter.log(format("[%-12s] %s", LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME), message));
+        Reporter.log(format("[%-12s] %s", LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME), message + "\n"));
         System.out.println(message);
     }
 
-    public static void writeLog(String browserName) { // TODO To debug.
+    public static void writeLog(String browserName) {
         File logsFile = new File(browserName + "_logs.txt");
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(logsFile))) {
-            bw.write(EventHandler.sb.toString());
+            bw.write(String.valueOf(Reporter.getOutput()));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -72,7 +72,7 @@ public class HomePage extends BasePage {
             case EUR:
                 for (WebElement value : productPrices) {
                     if (value.getText().contains("€") || value.getText().contains("EUR")) {
-                        CustomReporter.log(value.getText() + " is displayed in EUR currency. Verified.");
+                        CustomReporter.log(value.getText() + ". Passed.");
                     } else {
                         return false;
                     }
@@ -81,7 +81,7 @@ public class HomePage extends BasePage {
             case UAH:
                 for (WebElement value : productPrices) {
                     if (value.getText().contains("₴") || value.getText().contains("UAH")) {
-                        CustomReporter.log(value.getText() + " passed.");
+                        CustomReporter.log(value.getText() + ". Passed.");
                     } else {
                         return false;
                     }
@@ -90,7 +90,7 @@ public class HomePage extends BasePage {
             case USD:
                 for (WebElement value : productPrices) {
                     if (value.getText().contains("$") || value.getText().contains("USD")) {
-                        CustomReporter.log(value.getText() + " passed.");
+                        CustomReporter.log(value.getText() + ". Passed.");
                     } else {
                         return false;
                     }
