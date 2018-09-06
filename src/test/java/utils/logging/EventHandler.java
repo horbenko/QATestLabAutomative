@@ -12,7 +12,6 @@ import static java.lang.String.format;
 import static java.lang.String.valueOf;
 
 public class EventHandler implements WebDriverEventListener {
-    static StringBuilder sb = new StringBuilder();
 
     @Override
     public void beforeAlertAccept(WebDriver webDriver) {

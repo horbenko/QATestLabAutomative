@@ -5,7 +5,6 @@ import org.testng.Reporter;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import static java.lang.String.format;
-import static utils.logging.EventHandler.sb;
 
 import java.io.BufferedWriter;
 import java.io.File;
