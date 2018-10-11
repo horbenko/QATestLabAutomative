@@ -15,6 +15,7 @@ public class Tests extends BaseConfig {
     @Test
     public void testCase() {
         HomePage homePage = new HomePage();
+
         CustomReporter.logAction("Start logging.");
         assertTrue(homePage.checkProductsCurrency(homePage.getEstablishedCurrency()), "The product currency doesn't match with selected currency."); // Step 1, 2.
         homePage.selectCurrency(Currency.USD); // Step 3.

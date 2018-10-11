@@ -27,6 +27,7 @@ public class GeneralActions {
         password.sendKeys(Config.getPassword());
         WebElement submit = driver.findElement(By.name("submitLogin"));
         submit.click();
+
     }
 
     public static void logout(WebDriver driver){
